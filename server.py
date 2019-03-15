@@ -1,5 +1,5 @@
 # Import flask
-import flask
+import flask, requests
 from flask import Flask
 
 # Setup app
@@ -14,10 +14,10 @@ def index():
 # Set up more routes here
 
 
-# This check will only run tyhe code if you run it from the terminal,
+# This check will only run the code if you run it from the terminal,
 # not if you import it
 if __name__ == '__main__':
     # Set debug to true
-    app.debug = true
+    # app.debug = True
     # Run the app
-    app.run('0.0.0.0')
+    app.run(host='0.0.0.0')
