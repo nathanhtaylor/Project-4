@@ -7,16 +7,16 @@
 
 #### Setting up
 1. Clone nathanhtaylor/Project-4 to your directory:
-`git clone git://github.com/nathanhtaylor/project-4.git` (or use the GitHub app)
+`$ git clone git://github.com/nathanhtaylor/project-4.git` (or use the GitHub app)
 
 2. `cd` into .\Project-4:
-`cd .\Project-4\`
+`$ cd .\Project-4\`
 
 3. Build our Docker image:
 `$ docker build --tag=server .`
 
 4. Run the Docker image:
-`docker run --rm -it -p 5000:5000 server`
+`$ docker run --rm -it -p 5000:5000 server`
 
 This will send the contents of server.py to `http://localhost:5000` and then delete the container once you Ctrl+C to stop.
 
