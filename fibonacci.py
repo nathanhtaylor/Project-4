@@ -2,16 +2,17 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/fibonacci/<int>')
-def handle_md5(int):
+@app.route('/fibonacci/<fnumraw>')
+def fibonacci(fnumraw):
     
     fold = 0
     fnew = 1
     fplaceholder = 0
     fnum = 0
     farray = []
+    strfarray = ''
 
-    fnumraw = input("Give me a num ")
+    #fnumraw = input("Give me a num ")
 
     if fnumraw.isdigit():
         fnum = int(fnumraw)
@@ -29,13 +30,13 @@ def handle_md5(int):
             fold = fnew
             fnew = fplaceholder
             fplaceholder = fnew + fold
-
-        return farray
+            
+        strfarray = ' '.join(str(e) for e in farray)
+        return strfarray
 
     else:
         return "You must input a positive integer"
  
-    if __name__ =="__main__":
-            app.run(debug=True,port=8080)       
+      
 #app.debug = True
-#app.run()        
+app.run()        
