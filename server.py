@@ -24,8 +24,9 @@ def is_prime(num):
                return 'Not a prime'
         return 'Is a prime'
    
+
 # slack-alert route
-@app.route('/send_slack/<string>')
+@app.route('/send_slack/<string:x>')
 def send_slack(x):
     
     #print("Input: ", x)
@@ -36,7 +37,7 @@ def send_slack(x):
     #x = 6
     slack_msg = {'text': x }
     requests.post(web_hook_url,data=json.dumps(slack_msg))
-    #return True
+    return True
 
 
 # This check will only run the code if you run it from the terminal,
