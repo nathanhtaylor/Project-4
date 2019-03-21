@@ -1,5 +1,5 @@
 # Import flask
-import flask, requests
+import flask, requests, json
 from flask import Flask
 
 # Setup app
