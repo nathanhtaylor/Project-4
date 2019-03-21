@@ -27,6 +27,8 @@ return is_prime
 @app.route('/send_slack/<string>')
 def send_slack(x):
     
+    print("Input: ", x)
+
     try:
         #change the url depending on the channel you want to post to
         web_hook_url = 'https://hooks.slack.com/services/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'
