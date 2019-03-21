@@ -1,11 +1,9 @@
-import os
-from slackclient import slackclient
+import requests
+import json
+web_hook_url = 'https://hooks.slack.com/services/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'
 
-slack_token = os.environ["xoxb-522948478901-583357389586-3cWfxNKoXNjGWCmDOZDSgrGs"]
-sc = SlackClient(slack_token)
+x = 6
 
-sc.api_call(
-    "chat.postMessage",
-    chennel="#botspam-tcm",
-    text="TESTING -Matt"
-)
+slack_msg = {'text': x }
+
+requests.post(web_hook_url,data=json.dumps(slack_msg))
