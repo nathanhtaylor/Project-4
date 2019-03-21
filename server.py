@@ -11,11 +11,6 @@ def index():
     # Do stuff
     return 'it works'
 
-@app.route('/test/')
-def index():
-    # Do stuff
-    return 'it works here too'
-
 # Set up more routes here
 # is-prime route
 @app.route('/is_prime/<num>')
