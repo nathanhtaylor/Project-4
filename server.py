@@ -28,7 +28,7 @@ def is_prime(num):
 @app.route('/send_slack/<string>')
 def send_slack(x):
     
-    print("Input: ", x)
+    #print("Input: ", x)
 
     #change the url depending on the channel you want to post to
     web_hook_url = 'https://hooks.slack.com/services/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'
@@ -36,7 +36,7 @@ def send_slack(x):
     #x = 6
     slack_msg = {'text': x }
     requests.post(web_hook_url,data=json.dumps(slack_msg))
-    return True
+    #return True
 
 
 # This check will only run the code if you run it from the terminal,
