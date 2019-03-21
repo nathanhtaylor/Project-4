@@ -17,7 +17,11 @@ if fnumraw.isdigit():
         farray.append(fnew)
 
     
-    
+    while fplaceholder <= fnum:
+        farray.append(fplaceholder)
+        fold = fnew
+        fnew = fplaceholder
+        fplaceholder = fnew + fold
 
     print (farray)
 
