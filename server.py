@@ -1,5 +1,5 @@
 # Import flask
-import flask, requests, json
+import flask, requests, json, jsonify
 from flask import Flask
 
 # Setup app
@@ -37,7 +37,10 @@ def send_slack(x):
     #x = 6
     slack_msg = {'text': x }
     requests.post(web_hook_url,data=json.dumps(slack_msg))
-    return 'success'
+    return jsonify(
+        input=x
+        output=True
+    )
 
 
 # This check will only run the code if you run it from the terminal,
