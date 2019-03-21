@@ -3,7 +3,8 @@
 #### Before beginning:
 1. Make sure Docker and Git are installed
 2. Make sure you are logged in to Docker and GitHub
-2. Pick a directory to work out of, e.g. C:\Users\YourName\Project_4
+3. Pick a directory to work out of, e.g. C:\Users\YourName\Project_4
+4. **Create a new branch for your part of the project!**
 
 #### Setting up
 1. Clone nathanhtaylor/Project-4 to your directory:
