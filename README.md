@@ -1,12 +1,12 @@
 # Instructions for setup
 
-#### Before beginning:
+### Before beginning:
 1. Make sure Docker and Git are installed
 2. Make sure you are logged in to Docker and GitHub
 3. Pick a directory to work out of, e.g. C:\Users\YourName\Project_4
 4. **Create a new branch for your part of the project!**
 
-#### Setting up
+### Setting up
 1. Clone nathanhtaylor/Project-4 to your directory:
 `$ git clone git://github.com/nathanhtaylor/project-4.git` (or use the GitHub app)
 
@@ -21,7 +21,7 @@
 
 This will send the contents of server.py to `http://localhost:5000` and then delete the container once you Ctrl+C to stop.
 
-#### Making changes
+### Making changes
 **Make sure that code is written inside of server.py so that all paths work together!**
 
 To work on files that are being used by Flask, the docker image must be rebuilt to reflect changes by repeating steps 3 and 4.
