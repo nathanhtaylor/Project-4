@@ -5,3 +5,9 @@ fnum = 0
 farray = []
 
 fnumraw = input("Give me a num ")
+
+if fnumraw.isdigit():
+    
+
+else:
+    print ("You must input a positive number")
