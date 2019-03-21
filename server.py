@@ -38,7 +38,7 @@ def send_slack(x):
     slack_msg = {'text': x }
     requests.post(web_hook_url,data=json.dumps(slack_msg))
     return jsonify(
-        input=x
+        input=x,
         output=True
     )
 
