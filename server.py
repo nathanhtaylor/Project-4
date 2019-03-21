@@ -16,6 +16,7 @@ def index():
 @app.route('/is_prime/<num>')
 
 def is_prime(num):
+    num = int(num)
     if num < 2:
         return 'Enter number larger than 1'
     else:
