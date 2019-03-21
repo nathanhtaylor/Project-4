@@ -1,5 +1,5 @@
 # Import flask
-import flask, requests
+import flask, requests, json
 from flask import Flask
 
 # Setup app
@@ -22,6 +22,23 @@ def is_prime(num):
             return False 
     return True
 return is_prime 
+
+# slack-alert route
+@app.route('/send_slack/<string>')
+def send_slack(x):
+    
+    try:
+        #change the url depending on the channel you want to post to
+        web_hook_url = 'https://hooks.slack.com/services/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'
+
+        #x = 6
+        slack_msg = {'text': x }
+        requests.post(web_hook_url,data=json.dumps(slack_msg))
+        return True
+
+    except:
+        return False
+
 
 # This check will only run the code if you run it from the terminal,
 # not if you import it
