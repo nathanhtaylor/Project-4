@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     # Do stuff
-    return 'it works and it works'
+    return 'it works and it works and it works a third time'
 
 # Set up more routes here
 # is-prime route
