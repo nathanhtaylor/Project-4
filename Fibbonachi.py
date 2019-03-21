@@ -10,7 +10,14 @@ if fnumraw.isdigit():
     fnum = int(fnumraw)
     fplaceholder = fnew + fold    
 
-   
+    if fold < fnum:
+        farray.append(fold)
+    
+    if fnew < fnum:
+        farray.append(fnew)
+
+    
+    
 
     print (farray)
 
