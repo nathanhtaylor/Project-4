@@ -18,9 +18,10 @@ def index():
 def is_prime(num):
     for i in range(2, num):
         if n%i==0:
-            return False 
-    return True
-return is_prime 
+            return False
+        else:
+            return True
+    return is_prime 
 
 # This check will only run the code if you run it from the terminal,
 # not if you import it
