@@ -13,7 +13,7 @@ def index():
 
 # Set up more routes here
 # is-prime route
-@app.route('/is_prime/<num>')
+@app.route('/is_prime/<int:num>')
 
 def is_prime(num):
     if num < 2:
