@@ -36,8 +36,18 @@ def send_slack(x):
         requests.post(web_hook_url,data=json.dumps(slack_msg))
         return True
 
-    except:
+    except invalid_payload:
+        #when received request is malformed, text did not properly escape
         return False
+
+    except channel_not_found:
+        #channel being addressed doesn't exist or is invalid
+        return False
+
+    except channel_is_archived:
+        #channel has been archived, no longer recieving messages
+        return False
+    
 
 
 # This check will only run the code if you run it from the terminal,
