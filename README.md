@@ -22,6 +22,8 @@
 This will send the contents of server.py to `http://localhost:5000` and then delete the container once you Ctrl+C to stop.
 
 #### Making changes
+**Make sure that code is written inside of server.py so that all paths work together!**
+
 To work on files that are being used by Flask, the docker image must be rebuilt to reflect changes by repeating steps 3 and 4.
 
 The `Dockerfile` and `requirements.txt` files are what Docker uses to build the image. If your code needs a specific library (for example `import re`)
