@@ -15,7 +15,6 @@ def index():
 # is-prime route 
 @app.route('/is_prime/<int>')
 
-is_prime = 0
 def is_prime(num):
     for i in range(2, num):
         if n%i==0:
