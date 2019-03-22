@@ -32,7 +32,7 @@ def is_prime(num):
 def factorial(num):
     try:
         x = int(num)
-    except ValueError
+    #except ValueError
         return jsonify(formatted_return(num, "ERROR: Integer value expected.")), status.HTTP_400_BAD_REQUEST
     result = x
     if x > 0:
