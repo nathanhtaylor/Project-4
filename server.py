@@ -27,22 +27,32 @@ def is_prime(num):
         return 'Is a prime'
    
 #factorial route
-#needs more testing, may not be fully functional
-@app.route('/factorial/<string:num>', methods=['GET'])
-#def factorial(num):
-    #try:
-        #x = int(num)
-    #except ValueError
-        #return jsonify(formatted_return(num, "ERROR: Integer value expected.")), status.HTTP_400_BAD_REQUEST
-    #result = x
-    #if x > 0:
-        #count = x - 1
-        #while count > 0:
-            #result *= count
-            #count -= 1
-        #return jsonify(formatted_return(num, result))
-    #else:
-        #return jsonify(formatted_return(num, "ERROR: Integer must be greater than zero.")), status.HTTP_400_BAD_REQUEST
+
+@app.route('/factorial/<fnum>')
+def factorial(fnum):
+        
+
+    if fnum == "0":
+        return "1"
+
+    elif fnum.isdigit():
+        
+        fnum = int(fnum)
+        x = 1
+        sfnum = fnum
+        
+        while x < fnum:
+            sfnum = sfnum * x
+            x = x + 1
+            
+        sfnum = str(sfnum)
+        return sfnum
+    
+
+    else:
+        return "You must input a positive integer"
+ 
+
 
 # slack-alert route
 @app.route('/send_slack/<string:x>')
