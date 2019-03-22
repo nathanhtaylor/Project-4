@@ -4,7 +4,7 @@ from flask import flask
 
 from flask import jsonify
 
-from flask import status
+from flask_api import status
 
 app = Flask(__name__)
 
