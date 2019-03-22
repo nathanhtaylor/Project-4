@@ -14,6 +14,26 @@ def index():
     return 'it works and it works and it works a third time'
 
 # Set up more routes here
+
+#md5 route
+
+@app.route('/md5s/<text>')
+def md5s(text):
+    
+    import hashlib
+    from hashlib import md5  
+    
+    textUtf8 = text.encode("utf-8")
+    
+    hash = hashlib.md5( textUtf8 )
+    hexa = hash.hexdigest()
+    
+    #m = hashlib.md5()
+    #m.update(text.encode('utf-8'))
+    #md5string=m.digest()
+    
+    return hexa
+
 # is-prime route
 @app.route('/is_prime/<int:num>')
 
