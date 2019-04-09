@@ -46,12 +46,12 @@ def fibonacci(fnumraw):
             fnew = fplaceholder
             fplaceholder = fnew + fold
             
-        strfarray = ' '.join(str(e) for e in farray)
+        #strfarray = ' '.join(str(e) for e in farray)
         
         return jsonify (
             input = fnumraw,
             
-            output = strfarray
+            output = farray
             )
 
     else:
