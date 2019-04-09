@@ -59,8 +59,8 @@ def fibonacci(fnumraw):
 
 #md5 route
 
-@app.route('/md5s/<text>')
-def md5s(text):
+@app.route('/md5/<text>')
+def md5(text):
     
     import hashlib
     from hashlib import md5  
@@ -77,7 +77,7 @@ def md5s(text):
     return hexa
 
 # is-prime route
-@app.route('/is-prime/<num>')
+@app.route('/is_prime/<num>')
 def isprime(num):
   
   if num.isdigit():
