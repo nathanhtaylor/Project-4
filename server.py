@@ -84,29 +84,27 @@ def md5(text):
 # is-prime route
 @app.route('/is_prime/<num>')
 def isprime(num):
-  
-  if num.isdigit():
-    x = True 
-    num = int(num)
-  
-    for i in (2, num):
     
-      while x:
-      
-        if num % i == 0:
-          x = False
-        
-        #else:
-          #x = True
-  
-  
-          if x:
-            return "True"
-        
-          else:
-            return "False"
-  else: 
-    return "You must input a positive integer"
+    if num.isdigit():
+        x=True
+        inum = num
+        num = int(num)
+        for i in range(2, num//2):
+            if(num % i) ==0:
+                x = False
+                break
+        if x:
+            return jsonify (
+                input = inum,
+                output = True 
+            )
+        else:
+            return jsonify (
+                input = inum,
+                output = False 
+            )
+    else: 
+        return jsonify ("You must input a positive integer")
    
 #factorial route
 
