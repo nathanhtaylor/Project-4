@@ -72,8 +72,6 @@ def md5s(text):
     return hexa
 
 # is-prime route
-@app.route('/is_prime/<int:num>')
-
 @app.route('/is-prime/<num>')
 def isprime(num):
   
@@ -88,8 +86,8 @@ def isprime(num):
         if num % i == 0:
           x = False
         
-        else:
-          x = True
+        #else:
+          #x = True
   
   
           if x:
