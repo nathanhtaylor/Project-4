@@ -65,7 +65,9 @@ def md5(text):
     import hashlib
     from hashlib import md5  
     
+    outputtext = text
     textUtf8 = text.encode("utf-8")
+    
     
     hash = hashlib.md5( textUtf8 )
     hexa = hash.hexdigest()
@@ -74,7 +76,10 @@ def md5(text):
     #m.update(text.encode('utf-8'))
     #md5string=m.digest()
     
-    return hexa
+    return jsonify (
+        input = outputtext,
+        output = hexa
+        )
 
 # is-prime route
 @app.route('/is_prime/<num>')
