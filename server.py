@@ -47,10 +47,15 @@ def fibonacci(fnumraw):
             fplaceholder = fnew + fold
             
         strfarray = ' '.join(str(e) for e in farray)
-        return strfarray
+        
+        return jsonify (
+            input = fnumraw,
+            
+            output = strfarray
+            )
 
     else:
-        return "You must input a positive integer"
+        return jsonify ("You must input a positive integer")
 
 #md5 route
 
