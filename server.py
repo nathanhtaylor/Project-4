@@ -46,21 +46,28 @@ def fibonacci(fnumraw):
             fnew = fplaceholder
             fplaceholder = fnew + fold
             
-        strfarray = ' '.join(str(e) for e in farray)
-        return strfarray
+        #strfarray = ' '.join(str(e) for e in farray)
+        
+        return jsonify (
+            input = fnumraw,
+            
+            output = farray
+            )
 
     else:
-        return "You must input a positive integer"
+        return jsonify ("You must input a positive integer")
 
 #md5 route
 
-@app.route('/md5s/<text>')
-def md5s(text):
+@app.route('/md5/<text>')
+def md5(text):
     
     import hashlib
     from hashlib import md5  
     
+    outputtext = text
     textUtf8 = text.encode("utf-8")
+    
     
     hash = hashlib.md5( textUtf8 )
     hexa = hash.hexdigest()
@@ -69,45 +76,56 @@ def md5s(text):
     #m.update(text.encode('utf-8'))
     #md5string=m.digest()
     
-    return hexa
+    return jsonify (
+        input = outputtext,
+        output = hexa
+        )
 
 # is-prime route
-@app.route('/is_prime/<int:num>')
-
-@app.route('/is-prime/<num>')
+@app.route('/is_prime/<num>')
 def isprime(num):
-  
-  if num.isdigit():
-    x = True 
-    num = int(num)
-  
-    for i in (2, num):
     
-      while x:
-      
-        if num % i == 0:
-          x = False
+    if num.isdigit():
+        
+        x=True
+        inum = num
+        num = int(num)
+        
+        for i in range(2, num//2):
+            if(num % i) == 0:
+                x = False
+                break
+                
+        if num == 4:
+            x = False
+            
+        if x:
+            return jsonify (
+                input = inum,
+                output = True 
+            )
         
         else:
-          x = True
-  
-  
-          if x:
-            return "True"
+            return jsonify (
+                input = inum,
+                output = False 
+            )
         
-          else:
-            return "False"
-  else: 
-    return "You must input a positive integer"
+    else: 
+        return jsonify ("You must input a positive integer")
    
 #factorial route
 
 @app.route('/factorial/<fnum>')
 def factorial(fnum):
         
-
+    ifnum = fnum
+    
     if fnum == "0":
-        return "1"
+        return jsonify (
+                input = ifnum,
+                output = 1 
+            )
 
     elif fnum.isdigit():
         
@@ -119,12 +137,16 @@ def factorial(fnum):
             sfnum = sfnum * x
             x = x + 1
             
-        sfnum = str(sfnum)
-        return sfnum
+        #sfnum = str(sfnum)
+        
+        return jsonify (
+                input = ifnum,
+                output = sfnum 
+            )
     
 
     else:
-        return "You must input a positive integer"
+        return jsonify ("You must input a positive integer") 
  
 
 
